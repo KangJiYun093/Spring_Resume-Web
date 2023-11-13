@@ -1,0 +1,127 @@
+.AuthCard{
+    border-radius: 4px;
+    border: solid 1px #e4e5ed;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    box-sizing: border-box;
+}
+
+.signup-form-title{
+    line-height: 1.55;
+    letter-spacing: -0.4px;
+    color: #303441;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.css-1v1i5c2{
+    padding: 56px;
+    border: 1px solid #e4e5ed;
+    width: 100%;
+}
+
+.css-1ljdbip{
+    font-size: 30px;
+    font-weight: normal;
+    color: #303441;
+    line-height: normal;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.css-wa7cs7{
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.css-1b8vwo3{
+    font-size: 16px;
+    color: rgb(85, 89, 105);
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.css-cdrjiy{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.css-1i1vmw0{
+    width: 100%;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 8px;
+    transition: background-color 0.2s ease 0s, border-color 0.2s ease 0s;
+    display: inline-flex;
+    column-gap: 8px;
+    flex-direction: row;
+    overflow: hidden;
+    cursor: text;
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 34, 36);
+    height: 42px;
+    font-size: 14px;
+    padding: 0px 12px;
+    min-width: 64px;
+}
+
+.css-xv0cfn{
+    outline: none;
+    flex: 1 1 0%;
+    width: 100%;
+    background-image: none;
+    box-sizing: border-box;
+    font-size: inherit;
+    border: none;
+    font-weight: inherit;
+    background-color: transparent;
+    text-align: left;
+    color: inherit;
+    padding: 0px;
+}
+
+.css-1bt4mh6[disabled]{
+    cursor: not-allowed;
+    background-color: rgb(228, 229, 237);
+    border: none;
+    color: rgb(154, 155, 167);
+}
+
+.css-1bt4mh6{
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    height: 52px;
+    font-size: 16px;
+    padding: 0px 24px;
+    line-height: 16px;
+}
+
+.css-7zhfhb{
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    white-space: nowrap;
+    line-height: 16px;
+    font-size: 16px;
+}
