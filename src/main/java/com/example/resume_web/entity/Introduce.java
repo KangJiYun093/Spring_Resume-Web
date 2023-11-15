@@ -1,6 +1,7 @@
 package com.example.resume_web.entity;
 
 
+import com.example.resume_web.common.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,7 +14,7 @@ import java.awt.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Introduce {
+public class Introduce extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
