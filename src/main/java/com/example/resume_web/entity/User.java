@@ -1,5 +1,6 @@
 package com.example.resume_web.entity;
 
+import com.example.resume_web.common.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,11 +32,11 @@ public class User {
     private Date userBirth;
 
     //사진 파일 첨부
-    private String userFileOriginalName;
-
-    private String userFileSystemName;
-
-    private String userFileUuid;
-
-    private String userFilePath;
+//    private String userFileOriginalName;
+//
+//    private String userFileSystemName;
+//
+//    private String userFileUuid;
+//
+//    private String userFilePath;
 }
