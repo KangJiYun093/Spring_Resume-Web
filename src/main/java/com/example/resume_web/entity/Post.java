@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-//@Table(name="orders") //디비 테이블 이름
+//@Table(name="posts")
 @Setter
 @Getter
 @ToString
@@ -22,10 +22,11 @@ public class Post extends BaseEntity  {
     @Column(name = "post_id")
     private Long postId;
 
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private Long userId;
+    private User userId;
 
-    @JoinColumn(name = "board_id")
+    @Column(name = "board_id")
     private String postTitle;
 
     @JoinColumn(name = "education_id")
