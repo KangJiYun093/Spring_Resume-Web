@@ -12,6 +12,8 @@ public class PostController {
 
     @GetMapping("post-list")
     public String postList() {
+
+
         return "view/post-list";
     }
 
