@@ -20,12 +20,14 @@ public class User extends BaseEntity {
     @Column(name = "user_id")
     private Long userId;
 
-    private String userName;
-
-    private String userEName;
-
     @Column(unique = true)
     private String userEmail;
+
+    private String userPassword;
+
+    private String userName;
+
+    private String userEname;
 
     private String userPhone;
 

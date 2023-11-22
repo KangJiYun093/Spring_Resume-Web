@@ -13,6 +13,11 @@ import java.util.Date;
 @NoArgsConstructor //디폴트 생성자
 @Builder
 public class UserDto {
-
-    private User user;
+    private Long userId;
+    private String userEmail;
+    private String userPassword;
+    private String userName;
+    private String userEname;
+    private String userPhone;
+    private Date userBirth;
 }
