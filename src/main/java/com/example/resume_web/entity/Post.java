@@ -1,7 +1,6 @@
 package com.example.resume_web.entity;
 
 
-import com.example.resume_web.common.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Post extends BaseEntity  {
+public class Post  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

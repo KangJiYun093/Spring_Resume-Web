@@ -1,7 +1,6 @@
 package com.example.resume_web.entity;
 
 
-import com.example.resume_web.common.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Certification extends BaseEntity {
+public class Certification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
