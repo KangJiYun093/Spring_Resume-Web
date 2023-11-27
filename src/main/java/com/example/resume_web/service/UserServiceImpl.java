@@ -17,4 +17,9 @@ public class UserServiceImpl implements UserService {
     public UserDto login(String userEmail, String userPassword) {
         return toUserDTO(userRepository.login(userEmail, userPassword).get());
     }
+
+    @Override
+    public void join(UserDto userDto) {
+        userRepository.save(toUserEntity(userDto));
+    }
 }

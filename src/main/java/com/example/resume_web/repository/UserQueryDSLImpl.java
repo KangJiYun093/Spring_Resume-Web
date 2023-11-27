@@ -8,7 +8,6 @@ import java.util.Optional;
 
 import static com.example.resume_web.entity.QUser.user;
 
-
 @RequiredArgsConstructor
 public class UserQueryDSLImpl implements UserQueryDSL {
     private final JPAQueryFactory query;

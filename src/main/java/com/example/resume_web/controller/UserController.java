@@ -41,6 +41,13 @@ public class UserController {
         return "user/userSignIn";
     }
 
+    @PostMapping("join")
+    public RedirectView join(UserDto userDto) {
+        userService.join(userDto);
+
+        return new RedirectView("/user/login");
+    }
+
     @GetMapping("edit")
     public String edit() {
         return "user/userEditForm";
