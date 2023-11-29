@@ -1,0 +1,169 @@
+div{
+    display: block;
+}
+
+.main-list-view-box{
+    width: 100%;
+    height: 100%;
+    padding: 40px 0px 140px;
+    background-color: rgb(245, 245, 248);
+}
+
+.view-box{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin: 0px auto 20px;
+    padding: 32px 40px 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+}
+
+ul{
+    list-style: none; 
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list-content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+li{
+    padding: 0px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.list-content-box{
+    width: 100%;
+    height: 180px;
+    flex: 0 1 316px;
+    margin: 16px 16px 0px 0px;
+    background-color: rgb(245, 245, 248);
+    border-radius: 12px;
+}
+
+.list-content-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 40px);
+    padding: 20px;
+}
+
+.card-title > h2{
+    position: relative;
+    width: 244px;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+}
+
+.card-title > button{
+    display: flex;
+    top: 0px;
+    right: 0px;
+    border: none;
+    border-radius: 0px;
+    background: none;
+    cursor: pointer;
+}
+
+/* button {
+    border: none;
+    border-radius: 0px;
+    background: none;
+    cursor: pointer;
+} */
+
+h2{
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.card-date{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgb(228, 228, 228);
+}
+
+.list-content-card-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.list-content-card-add svg{
+    width: 32px;
+    height: 32px;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+button{
+    border: none;
+    border-radius: 0px;
+    background: none;
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.list-content-card-add > p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(68, 68, 68);
+}

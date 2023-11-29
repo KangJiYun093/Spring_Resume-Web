@@ -1,11 +1,17 @@
-.css-1hc7liq{
+.css-1hc7liq {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
     margin-bottom: 40px;
-    font-family: 'Metro Sans',sans-serif;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-family: 'Metro Sans', sans-serif;
     box-sizing: border-box;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    text-align: center; /* Center-align text within children */
 }
+
 
 .css-s0bzth{
     margin-top: 20px;
