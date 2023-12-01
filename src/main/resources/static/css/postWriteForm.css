@@ -181,7 +181,7 @@ form > div{
     margin: 57px auto 0px;
     width: 27px;
     height: 27px;
-    background: url(/assets/images/profile-add-ico.svg) center center / cover no-repeat;
+    /*background: url(/assets/images/profile-add-ico.svg) center center / cover no-repeat;*/
 }
 
 i {
@@ -320,8 +320,8 @@ svg:not(:root) {
 }
 
 svg{
-    width: 20;
-    height: 20;
+    width: 20px;
+    height: 20px;
     fill: none;
 }
 

@@ -158,6 +158,11 @@ $(".flrCAb-1").on("click", () => {
  
  })
 
+ $('#education').datepicker({
+    format: 'dd-mm-yyyy',
+    autoclose: true
+});
+
 })
 
   

@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 //@Table(name="orders") //디비 테이블 이름
@@ -38,6 +39,16 @@ public class Post  {
 
     @JoinColumn(name = "introduce_id")
     private Long introduceId;
+
+    private String userEmail;
+
+    private String userName;
+
+    private String userPhone;
+
+    private Date userBirth;
+
+    private String simplePr;    //간단 소개
 
     private LocalDateTime regTime;  //등록시간, localdatime 자바에서 제공하는 시간 함수
 
