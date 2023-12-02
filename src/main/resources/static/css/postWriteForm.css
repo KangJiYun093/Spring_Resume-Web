@@ -151,6 +151,19 @@ form > div{
     position: relative;
 }
 
+.save_container{
+    width: 1000px;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(245, 245, 248);
+    border-radius: 12px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 .btfYhf{
     display: flex;
     align-items: start;
@@ -480,8 +493,29 @@ button {
     margin-bottom: 95px;
 }
 
+.bXNDyY .bottom_btns button {
+    width: 164px;
+    border-radius: 300px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
 
+.ksTkXH {
+     background: rgb(0, 221, 109);
+     border: 1px solid rgb(0, 221, 109);
+     color: rgb(255, 255, 255);
+     padding: 0px 16px;
+ }
 
-/* th {
-    width: 25%;
-  } */
+.uTmNJ {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    border-radius: 3px;
+    height: 50px;
+    width: 150px;
+    line-height: 46px;
+}
