@@ -26,4 +26,7 @@ public class Certification {
 
     private Date certificationDate;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }

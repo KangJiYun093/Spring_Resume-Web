@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Setter
 @Getter
@@ -13,10 +14,6 @@ import java.util.Date;
 @Builder
 public class PostDto {
     private Long postId;
-    private Long certificationId;
-    private Long educationId;
-    private Long experienceId;
-    private Long introduceId;
     private String postTitle;
     private String simplePr;
     private String userEmail;
@@ -25,4 +22,9 @@ public class PostDto {
     private Date userBirth;
     private String regTime;
     private String updateTime;
+    private List<CertificationDto> certificationDto;
+    private List<EducationDto> educationDto;
+    private List<ExperienceDto> experienceDto;
+    private List<IntroduceDto> introduceDto;
+
 }

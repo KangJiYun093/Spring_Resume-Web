@@ -4,10 +4,11 @@ import com.example.resume_web.entity.Post;
 import com.querydsl.core.Tuple;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PostQueryDSL {
 
-    List<Post> findAllByPostId(Long postId);
+   public List<Post> findAllByPostId(Long postId);
 
-    List<Tuple> findPostDetailsByPostId(Long postId);
+//    public Optional<Post> findPostDetailsByPostId(Long postId);
 }

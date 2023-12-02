@@ -22,5 +22,9 @@ public class Introduce {
 
     private String introduceTitle;
 
-    private TextArea introduceContent;
+    private String introduceContent;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }

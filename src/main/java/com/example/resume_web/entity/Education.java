@@ -27,4 +27,8 @@ public class Education {
     private Date admissionYear;
 
     private Date graduationYear;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }
