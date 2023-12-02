@@ -8,7 +8,4 @@ import java.util.Optional;
 
 public interface PostQueryDSL {
 
-   public List<Post> findAllByPostId(Long postId);
-
-//    public Optional<Post> findPostDetailsByPostId(Long postId);
 }
