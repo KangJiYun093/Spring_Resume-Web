@@ -20,9 +20,9 @@ public class Education {
     @Column(name = "education_id")
     private Long educationId;
 
-    private String educationSchoolName;
+    private String educationBackground;     //학교명,전공
 
-    private String educationMajor;
+    private String educationLevel;      //최종학력
 
     private Date admissionYear;
 

@@ -20,10 +20,10 @@ public class Experience {
     @Column(name = "experience_id")
     private Long experienceId;
 
-    private String companyName;
+    private String companyNameDepart;     //회사이름,소속부서
 
-    private Date startDate;
+    private Date startDate;     //입사날짜
 
-    private Date endDate;
+    private Date endDate;       //퇴사날짜
 
 }

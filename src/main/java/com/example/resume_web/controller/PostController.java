@@ -13,11 +13,11 @@ public class PostController {
 
 //    private final PostService postService;
 
-    @GetMapping("post-list")
+    @GetMapping("post-list2")
     public String postList() {
 
 
-        return "view/post-list";
+        return "view/post-list2";
     }
 
     @GetMapping("post-write")
