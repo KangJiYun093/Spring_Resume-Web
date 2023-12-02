@@ -26,4 +26,8 @@ public class Experience {
 
     private Date endDate;       //퇴사날짜
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
+
 }

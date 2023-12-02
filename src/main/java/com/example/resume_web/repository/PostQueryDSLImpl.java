@@ -7,6 +7,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.example.resume_web.entity.QPost.post;
 
@@ -16,23 +17,30 @@ public class PostQueryDSLImpl implements PostQueryDSL {
 
     @Override
     public List<Post> findAllByPostId(Long postId) {
-        QPost post = QPost.post;
 
         return query.selectFrom(post)
                 .where(post.postId.eq(postId))
                 .fetch();
     }
 
-    @Override
-    public List<Tuple> findSpecificDetailsByPostId(Long postId) {
-        QPost qPost = QPost.post;
+//    @Override
+//    public Optional<Post> findPostDetailsByPostId(Long postId) {
+//
+////        return query.select(post.educationId, post.experienceId,
+////                        post.certificationId, post.introduceId, post.postTitle,
+////                        post.userName, post.userEmail, post.userBirth, post.userPhone,
+////                        post.simplePr,post.regTime, post.updateTime)
+////                .from(post)
+////                .where(post.postId.eq(postId))
+////                .fetchOne();
+//
+//        return query.select(post.educationId, post.experienceId,
+//                post.certificationId, post.introduceId, post.postTitle,
+//                post.userName, post.userEmail, post.userBirth, post.userPhone,
+//                post.simplePr,post.regTime, post.updateTime)
+//                .from(post)
+//                .where(post.postId.eq(postId))
+//                .fetchOne();
+//    }
 
-        return query.select(qPost.educationId, qPost.experienceId,
-                        qPost.certificationId, qPost.introduceId, qPost.postTitle,
-                        qPost.userName, qPost.userEmail, qPost.userBirth, qPost.userPhone,
-                        qPost.simplePr,qPost.regTime, qPost.updateTime)
-                .from(qPost)
-                .where(qPost.postId.eq(postId))
-                .fetch();
-    }
 }

@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 //@Table(name="orders") //디비 테이블 이름
@@ -22,23 +23,7 @@ public class Post  {
     @Column(name = "post_id")
     private Long postId;
 
-    @JoinColumn(name = "user_id")
-    private Long userId;
-
-    @JoinColumn(name = "board_id")
     private String postTitle;
-
-    @JoinColumn(name = "education_id")
-    private Long educationId;
-
-    @JoinColumn(name = "experience_id")
-    private Long experienceId;
-
-    @JoinColumn(name = "certification_id")
-    private Long certificationId;
-
-    @JoinColumn(name = "introduce_id")
-    private Long introduceId;
 
     private String userEmail;
 
@@ -53,5 +38,17 @@ public class Post  {
     private LocalDateTime regTime;  //등록시간, localdatime 자바에서 제공하는 시간 함수
 
     private LocalDateTime updateTime;   //수정시간
+
+    @OneToMany(mappedBy ="post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Certification> certification;
+
+    @OneToMany(mappedBy ="post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Education> education;
+
+    @OneToMany(mappedBy ="post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Experience> experience;
+
+    @OneToMany(mappedBy ="post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Introduce> introduce;
 
 }
