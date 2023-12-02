@@ -27,6 +27,7 @@ public class PostService {
     private final CertificationRepository certificationRepository;
     private final IntroduceRepository introduceRepository;
 
+    @Transactional
     public List<PostDto> getPostList(){
 //        return postRepository.findAllByPostId(postId);
         List<Post> posts = postRepository.findAll();
