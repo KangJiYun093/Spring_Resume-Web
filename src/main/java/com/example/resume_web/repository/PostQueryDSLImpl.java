@@ -24,7 +24,7 @@ public class PostQueryDSLImpl implements PostQueryDSL {
     }
 
     @Override
-    public List<Tuple> findSpecificDetailsByPostId(Long postId) {
+    public List<Tuple> findPostDetailsByPostId(Long postId) {
         QPost qPost = QPost.post;
 
         return query.select(qPost.educationId, qPost.experienceId,
@@ -35,4 +35,5 @@ public class PostQueryDSLImpl implements PostQueryDSL {
                 .where(qPost.postId.eq(postId))
                 .fetch();
     }
+
 }

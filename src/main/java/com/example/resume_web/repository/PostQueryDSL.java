@@ -9,6 +9,5 @@ public interface PostQueryDSL {
 
     List<Post> findAllByPostId(Long postId);
 
-    List<Tuple> findSpecificDetailsByPostId(Long postId);
-
+    List<Tuple> findPostDetailsByPostId(Long postId);
 }

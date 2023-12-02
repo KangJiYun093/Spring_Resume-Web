@@ -25,6 +25,4 @@ public class PostDto {
     private Date userBirth;
     private String regTime;
     private String updateTime;
-//    private Integer userId;
-
 }
