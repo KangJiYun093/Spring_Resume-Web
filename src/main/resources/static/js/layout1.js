@@ -68,10 +68,11 @@ $(() => {
      $(".flrCAb-3").on("click", () => {
         let text = `
              <tr >
-             <th scope="col" style="width: 35%;">
+             <th scope="col" style="width: 25%;">
                  <input type="date" id="datepicker" >
-                 <span>-</span>
-                 <input type="date" id="datepicker" >
+             </th>
+             <th scope="col" style="width: 30%;">
+                 <input placeholder="자격증명을 입력해주세요" type="text" value="" name="educations.0.schoolName">
              </th>
              <th scope="col" style="width: 40%;">
                  <input placeholder="관련기관을 입력해주세요" type="text" value="" name="educations.0.schoolName">
