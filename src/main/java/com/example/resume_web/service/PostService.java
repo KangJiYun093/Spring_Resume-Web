@@ -2,13 +2,14 @@ package com.example.resume_web.service;
 
 import com.example.resume_web.dto.*;
 import com.example.resume_web.entity.*;
-import com.example.resume_web.repository.PostRepository;
+import com.example.resume_web.repository.*;
 import com.querydsl.core.Tuple;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,6 +22,10 @@ import java.util.Optional;
 public class PostService {
 
     private final PostRepository postRepository;
+    private final EducationRepository educationRepository;
+    private final ExperienceRepository experienceRepository;
+    private final CertificationRepository certificationRepository;
+    private final IntroduceRepository introduceRepository;
 
     public List<PostDto> getPostList(){
 //        return postRepository.findAllByPostId(postId);
@@ -118,6 +123,31 @@ public class PostService {
         return introduceDtoList;
     }
 
+    public void savePost(PostDto postDto){
+         postRepository.save(toPostEntity(postDto));
+
+        postDto.getEducationDto().forEach(educationDto -> {
+            educationRepository.save(toEducaionEntity(educationDto));
+        });
+
+        postDto.getExperienceDto().forEach(experienceDto -> {
+            experienceRepository.save(toExperienceEntity(experienceDto));
+        });
+
+        postDto.getCertificationDto().forEach(certificationDto -> {
+            certificationRepository.save(toCertificationEntity(certificationDto));
+        });
+
+        postDto.getIntroduceDto().forEach(introduceDto -> {
+            introduceRepository.save(toIntroduceEntity(introduceDto));
+        });
+
+    }
+
+    public void deletePost(Long postId){
+        postRepository.deleteById(postId);
+    }
+
     public Post toPostEntity(PostDto postDto) {
         return Post.builder()
                 .postId(postDto.getPostId())
@@ -131,6 +161,42 @@ public class PostService {
                 .updateTime(LocalDateTime.parse(postDto.getUpdateTime()))
                 .build();
 
+    }
+
+    public Education toEducaionEntity(EducationDto educationDto){
+        return Education.builder()
+                .educationId(educationDto.getEducationId())
+                .educationLevel(educationDto.getEducationLevel())
+                .educationBackground(educationDto.getEducationBackground())
+                .admissionYear(educationDto.getAdmissionYear())
+                .graduationYear(educationDto.getGraduationYear())
+                .build();
+    }
+
+    public Experience toExperienceEntity(ExperienceDto experienceDto){
+        return Experience.builder()
+                .experienceId(experienceDto.getExperienceId())
+                .companyNameDepart(experienceDto.getCompanyNameDepart())
+                .startDate(experienceDto.getStartDate())
+                .endDate(experienceDto.getEndDate())
+                .build();
+    }
+
+    public Certification toCertificationEntity(CertificationDto certificationDto){
+        return Certification.builder()
+                .certificationId(certificationDto.getCertificationId())
+                .certificationAuthority(certificationDto.getCertificationAuthority())
+                .certificationName(certificationDto.getCertificationName())
+                .certificationDate(certificationDto.getCertificationDate())
+                .build();
+    }
+
+    public Introduce toIntroduceEntity(IntroduceDto introduceDto){
+        return Introduce.builder()
+                .introduceId(introduceDto.getIntroduceId())
+                .introduceTitle(introduceDto.getIntroduceTitle())
+                .introduceContent(introduceDto.getIntroduceContent())
+                .build();
     }
 
     
