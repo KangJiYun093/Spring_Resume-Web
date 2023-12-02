@@ -8,11 +8,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <link rel="stylesheet" href="/css/postWriteForm.css">
     <title>writePage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-     <!-- jQuery 라이브러리 -->
-  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  <script src="/js/layout1.js"></script>
-
-
 </head>
 <body>
     <main class="wrap">
@@ -96,6 +91,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb">Add</button>
                                             </h1>
                                             <table class="table" id="education">
+                                                <thead class="education-list"></thead>
                                                 <!-- <thead>
                                                   <tr >
                                                     <th scope="col" style="width: 40%;">
@@ -128,6 +124,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb-1">Add</button>
                                             </h1>
                                             <table class="table" id="experience">
+                                                <thead class="experience-list"></thead>
                                                 <!-- <thead>
                                                   <tr>
                                                     <th scope="col">#</th>
@@ -204,6 +201,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb-3">Add</button>
                                             </h1>
                                             <table class="table" id="certification">
+                                                <thead class="certification-list"></thead>
                                                 <!-- <thead>
                                                   <tr>
                                                     <th scope="col">#</th>
@@ -241,7 +239,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 자기소개서
                                                 <button type="button" class="flrCAb-4">Add</button>
                                             </h1>
-                                            <table class="table" id="introduce"></table>
+                                            <table class="table" id="introduce">
+                                                <thead class="introduce-list"></thead>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -253,4 +253,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
         </div>
     </main>
 </body>
+<!-- jQuery 라이브러리 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="/js/layout1.js"></script>
 </html>
