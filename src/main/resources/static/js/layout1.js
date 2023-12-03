@@ -4,9 +4,9 @@ $(() => {
        let text = `
             <tr>
                 <th scope="col" style="width: 35%;">
-                    <input type="date" id="admission-year" name="admissionYear">
+                    <input class="datepicker-input" type="date" id="admission-year" name="admissionYear">
                     <span>-</span>
-                    <input type="date" id="graduation-year" name="graduationYear">
+                    <input class="datepicker-input" type="date" id="graduation-year" name="graduationYear">
                 </th>
                 <th scope="col" style="width: 20%;">
                 <select class="form-select" name="educationLevel">
@@ -46,9 +46,9 @@ $(() => {
         let text = `
              <tr >
              <th scope="col" style="width: 35%;">
-                 <input type="date" id="datepicker" >
+                 <input class="datepicker-input" type="date" id="datepicker" >
                  <span>-</span>
-                 <input type="date" id="datepicker" >
+                 <input class="datepicker-input" type="date" id="datepicker" >
              </th>
              <th scope="col" style="width: 40%;">
                  <input placeholder="회사명을 입력해주세요" type="text" value="" name="educations.0.schoolName">
@@ -69,7 +69,7 @@ $(() => {
         let text = `
              <tr >
              <th scope="col" style="width: 25%;">
-                 <input type="date" id="datepicker" >
+                 <input class="datepicker-input" type="date" id="datepicker" >
              </th>
              <th scope="col" style="width: 30%;">
                  <input placeholder="자격증명을 입력해주세요" type="text" value="" name="educations.0.schoolName">
