@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,8 @@ public class PostService {
         return postDtos;
     }
 
+    @Transactional
     public PostDto getPostDetail(Long postId){
-//        return toPostDTO(postRepository.findPostDetailsByPostId(postId).get());
         return toPostDTO(postRepository.findById(postId).get());
     }
 
@@ -60,6 +61,7 @@ public class PostService {
     }
 
     public List<EducationDto> toEducationDTO(List<Education> educations){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         List<EducationDto> educationDtoList = new ArrayList<>();
         educations.forEach(
                 education -> {
@@ -125,22 +127,31 @@ public class PostService {
     }
 
     public void savePost(PostDto postDto){
-         postRepository.save(toPostEntity(postDto));
+        Post post = toPostEntity(postDto);
+        postRepository.save(post);
 
         postDto.getEducationDto().forEach(educationDto -> {
-            educationRepository.save(toEducaionEntity(educationDto));
+            Education education = toEducationEntity(educationDto);
+            education.setPost(post);
+            educationRepository.save(education);
         });
 
         postDto.getExperienceDto().forEach(experienceDto -> {
-            experienceRepository.save(toExperienceEntity(experienceDto));
+            Experience experience = toExperienceEntity(experienceDto);
+            experience.setPost(post);
+            experienceRepository.save(experience);
         });
 
         postDto.getCertificationDto().forEach(certificationDto -> {
-            certificationRepository.save(toCertificationEntity(certificationDto));
+            Certification certification = toCertificationEntity(certificationDto);
+            certification.setPost(post);
+            certificationRepository.save(certification);
         });
 
         postDto.getIntroduceDto().forEach(introduceDto -> {
-            introduceRepository.save(toIntroduceEntity(introduceDto));
+            Introduce introduce = toIntroduceEntity(introduceDto);
+            introduce.setPost(post);
+            introduceRepository.save(introduce);
         });
 
     }
@@ -164,7 +175,7 @@ public class PostService {
 
     }
 
-    public Education toEducaionEntity(EducationDto educationDto){
+    public Education toEducationEntity(EducationDto educationDto){
         return Education.builder()
                 .educationId(educationDto.getEducationId())
                 .educationLevel(educationDto.getEducationLevel())

@@ -2,6 +2,7 @@ div{
     display: block;
 }
 
+
 body{
     line-height: 1;
     color: rgb(0, 0, 0);
@@ -14,6 +15,7 @@ body{
     font-size: 16px;
     padding-bottom: 20px;
     padding-top: 20px;
+
 }
 
 .main-list-view-box{
