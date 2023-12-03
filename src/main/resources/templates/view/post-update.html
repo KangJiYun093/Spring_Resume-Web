@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"
-xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/postWriteForm.css">
     <title>writePage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-     <!-- jQuery 라이브러리 -->
-  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  <script src="/js/layout1.js"></script>
-
-
 </head>
 <body>
     <main class="wrap">
@@ -25,7 +18,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                 <div class="wirte_title">
                                     <div class="title_content">
                                         <textarea name="title" maxlength="30" placeholder="이력서 타이틀을 입력해주세요" 
-                                        class="form-control" style="height: 28px;"></textarea>
+                                        class="form-control" style="height: 28px;" th:text="${post.postTitle}" readonly></textarea>
                                     </div>
                                 </div>
                                 <div class="write_detail_container">
@@ -34,7 +27,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                             <div class="daOajH">
                                                 <div class="kmsPe">
                                                     <textarea name="username" maxlength="15" 
-                                                    placeholder="이름을 입력해주세요" class="form-control" style="height: 67px;"></textarea>
+                                                    placeholder="이름을 입력해주세요" class="form-control" style="height: 67px;" th:text="${post.userName}" readonly></textarea>
                                                 </div>
                                                 <div class="edJSgm">
                                                     <dl class="dmkKsf">
@@ -46,7 +39,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                         <span class="blind">이메일</span>
                                                         </dt>
                                                         <dd class="fEwvua">
-                                                            <input type="text" value="" name="birthbtn" placeholder="이메일을 입력해주세요">
+                                                            <input type="text" value="" name="email" placeholder="이메일을 입력해주세요" th:value="${post.userEmail}" readonly>
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -61,7 +54,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                         <span class="blind">생년월일</span>
                                                         </dt>
                                                         <dd class="fEwvua">
-                                                            <input type="date" value="" name="birthbtn" placeholder="생년월일을 입력해주세요">
+                                                            <input type="date" name="birthbtn" placeholder="생년월일을 입력해주세요" readonly>
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -76,7 +69,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                         <span class="blind">연락처</span>
                                                         </dt>
                                                         <dd class="fEwvua">
-                                                            <input type="text" value="" name="birthbtn" placeholder="연락처를 입력해주세요">
+                                                            <input type="text" value="" name="phone" placeholder="연락처를 입력해주세요" th:value="${post.userPhone}" readonly>
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -86,7 +79,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                     <div class="gsgVuo">
                                         <h1>간단 소개</h1>
                                         <textarea name="simplePr" placeholder="개발직무, 기술 스택, 경력 등 3~5줄 사이로 요약해서 본인을 소개 해주세요" 
-                                        class="form-control" style="height: 48px;"></textarea>
+                                        class="form-control" style="height: 48px;" th:text="${post.simplePr}" readonly></textarea>
                                     </div>
                                     <!-- 학력사항 -->
                                     <div>
@@ -96,6 +89,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb">Add</button>
                                             </h1>
                                             <table class="table" id="education">
+                                                <thead class="education-list"></thead>
                                                 <!-- <thead>
                                                   <tr >
                                                     <th scope="col" style="width: 40%;">
@@ -117,7 +111,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                     </th>
                                                   </tr>
                                                 </thead> -->
-                                              </table>
+                                            </table>
                                         </div>
                                     </div>
                                     <!-- 경력사항 -->
@@ -128,6 +122,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb-1">Add</button>
                                             </h1>
                                             <table class="table" id="experience">
+                                                <thead class="experience-list"></thead>
                                                 <!-- <thead>
                                                   <tr>
                                                     <th scope="col">#</th>
@@ -204,6 +199,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 <button type="button" class="flrCAb-3">Add</button>
                                             </h1>
                                             <table class="table" id="certification">
+                                                <thead class="certification-list"></thead>
                                                 <!-- <thead>
                                                   <tr>
                                                     <th scope="col">#</th>
@@ -241,7 +237,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                                                 자기소개서
                                                 <button type="button" class="flrCAb-4">Add</button>
                                             </h1>
-                                            <table class="table" id="introduce"></table>
+                                            <table class="table" id="introduce">
+                                                <thead class="introduce-list"></thead>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -253,4 +251,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
         </div>
     </main>
 </body>
+<!-- jQuery 라이브러리 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script th:inline="javascript">
+    let post = [[${post}]];
+</script>
+<script src="/js/post-update.js"></script>
 </html>

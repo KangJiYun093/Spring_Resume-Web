@@ -24,6 +24,6 @@ public class PostServiceTests {
 
     @Test
     public void getPost(){
-        System.out.println(postService.getPostDetail(1L).toString());
+        System.out.println(postService.getPostDetail(5L).toString());
     }
 }
