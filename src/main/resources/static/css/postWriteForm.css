@@ -8,18 +8,17 @@ body{
     text-size-adjust: none;
 }
 
-.wrap {
-    background-color: rgb(71, 116, 144);
+.wrap{
+    background-color: rgb(255, 255, 255);
     font-size: 16px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 65px;
+    padding-bottom: 0.1px;
 }
 
 .container{
     width: 100%;
     height: 100%;
     background-color: rgb(245, 245, 248);
-    border-radius: 30px;
 }
 
 .c_container{
@@ -43,7 +42,7 @@ form > div{
 }
 
 .view_container{
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .write_wrap_box{
@@ -55,7 +54,7 @@ form > div{
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 1000px;
+    width: 800px;
     margin-bottom: 20px;
     padding: 22px 40px;
     box-sizing: border-box;
@@ -247,7 +246,7 @@ input {
     letter-spacing: -0.5px;
     color: rgb(34, 34, 34);
     width: calc(100% - 140px);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -262,7 +261,6 @@ input {
 .edJSgm {
     display: flex;
     align-items: center;
-    padding-left: 15px;
 }
 
 .gsgVuo > h1 {
@@ -370,24 +368,6 @@ dt {
     word-break: break-all;
 }
 
-input[type=text]{
-    border: none;
-    width: 240px;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-input:focus {
-    outline:none;
-}
-
-.datepicker-input{
-    border: 2px;
-}
-
-.form-select{
-    border: none;
-}
-
 dd {
     display: block;
     margin-inline-start: 40px;
@@ -425,7 +405,7 @@ dd {
 .lpsJjJ > h1 {
     display: block;
     padding: 0px 0px 12px;
-    border-bottom: 3px solid rgb(34, 34, 34);
+    border-bottom: 1px solid rgb(34, 34, 34);
 }
 
 .dkcFfA {
@@ -524,8 +504,8 @@ button {
 }
 
 .ksTkXH {
-     background: rgb(69, 123, 157);
-     border: 1px solid rgb(69, 123, 157);
+     background: rgb(0, 221, 109);
+     border: 1px solid rgb(0, 221, 109);
      color: rgb(255, 255, 255);
      padding: 0px 16px;
  }
