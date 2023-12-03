@@ -9,7 +9,7 @@ import java.awt.*;
 @Entity
 @Setter
 @Getter
-@ToString
+//@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

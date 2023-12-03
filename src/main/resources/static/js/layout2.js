@@ -1,26 +1,29 @@
 $(() => {
 
     posts.forEach(post => {
-        let text;
+        let regTime = `${post.regTime}`.replace("T", " ");
 
-        text = `
+        let text = `
             <li class="list-content-box">
-                <div class="list-content-card">
-                    <div class="card-title">
-                        <h2>
-                            <a>${post.postTitle}</a>
-                        </h2>
-                        <span style="display: flex;">
-                            <button type="button" class="card-delete">X</button>
-                        </span>
+                <a href="/post/post-update/${post.postId}">
+                    <input type="hidden" class="post-id" value="${post.postId}">
+                    <div class="list-content-card">
+                        <div class="card-title">
+                            <h2>
+                                ${post.postTitle}
+                            </h2>
+                            <span style="display: flex;">
+                                <button type="button" class="card-delete">X</button>
+                            </span>
+                        </div>
+                        <div class="card-date">
+                            <span>
+                                ` + regTime + `
+                                등록
+                            </span>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <span>
-                            ${post.regTime}
-                            등록
-                        </span>
-                    </div>
-                </div>
+                </a>
             </li>
         `;
 
@@ -51,6 +54,24 @@ $(() => {
 
         $('.list-content').append(text);
     }
+
+    $('.card-delete').on('click', function(e) {
+        e.preventDefault();
+        if(!confirm("정말 삭제하시겠습니까?")) {
+            return;
+        }
+
+        let deleteId = $(this).parent().parent().parent().prev().val();
+
+        $.ajax({
+            url: "/post/post-delete",
+            type: "post",
+            data: { postId : deleteId },
+            success: function() {
+                document.location.reload();
+            }
+        });
+    });
 
     $(".list-content-card-add").on("click", () => {
         location.href="/post/post-write";
