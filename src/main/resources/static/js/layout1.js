@@ -4,9 +4,9 @@ $(() => {
        let text = `
             <tr>
                 <th scope="col" style="width: 35%;">
-                    <input type="date" id="admission-year" name="admissionYear">
+                    <input class="datepicker-input" type="date" id="admission-year" name="admissionYear">
                     <span>-</span>
-                    <input type="date" id="graduation-year" name="graduationYear">
+                    <input class="datepicker-input" type="date" id="graduation-year" name="graduationYear">
                 </th>
                 <th scope="col" style="width: 20%;">
                 <select class="form-select" name="educationLevel">
@@ -37,17 +37,17 @@ $(() => {
     $(".flrCAb-1").on("click", () => {
         let text = `
              <tr >
-                 <th scope="col" style="width: 35%;">
-                     <input type="date" id="experience-start" name="experienceStart">
-                     <span>-</span>
-                     <input type="date" id="experience-end" name="experienceEnd">
-                 </th>
-                 <th scope="col" style="width: 40%;">
-                     <input placeholder="회사명을 입력해주세요" type="text" value="" name="companyName">
-                 </th>
-                 <th scope="col" style="width: 5%;">
-                    <button type="button" class="delete-btn-1" onclick="close(this)">X</button>
-                 </th>
+             <th scope="col" style="width: 35%;">
+                 <input class="datepicker-input" type="date" id="datepicker" >
+                 <span>-</span>
+                 <input class="datepicker-input" type="date" id="datepicker" >
+             </th>
+             <th scope="col" style="width: 40%;">
+                 <input placeholder="회사명을 입력해주세요" type="text" value="" name="educations.0.schoolName">
+             </th>
+             <th scope="col" style="width: 5%;">
+             <button type="button" class="delete-btn-1" onclick="close(this)">X</button>
+             </th>
              </tr>
         `;
         $(".experience-list").append(text);
@@ -60,18 +60,18 @@ $(() => {
      $(".flrCAb-3").on("click", () => {
         let text = `
              <tr >
-                 <th scope="col" style="width: 25%;">
-                     <input type="date" id="certification-date" name="certificationDate">
-                 </th>
-                 <th scope="col" style="width: 30%;">
-                     <input placeholder="자격증명을 입력해주세요" type="text" value="" name="certificationName">
-                 </th>
-                 <th scope="col" style="width: 40%;">
-                     <input placeholder="관련기관을 입력해주세요" type="text" value="" name="checkCompanyName">
-                 </th>
-                 <th scope="col" style="width: 5%;">
-                    <button type="button" class="delete-btn-3" onclick="close(this)">X</button>
-                 </th>
+             <th scope="col" style="width: 25%;">
+                 <input class="datepicker-input" type="date" id="datepicker" >
+             </th>
+             <th scope="col" style="width: 30%;">
+                 <input placeholder="자격증명을 입력해주세요" type="text" value="" name="educations.0.schoolName">
+             </th>
+             <th scope="col" style="width: 40%;">
+                 <input placeholder="관련기관을 입력해주세요" type="text" value="" name="educations.0.schoolName">
+             </th>
+             <th scope="col" style="width: 5%;">
+             <button type="button" class="delete-btn-3" onclick="close(this)">X</button>
+             </th>
              </tr>
         `;
         $(".certification-list").append(text);
