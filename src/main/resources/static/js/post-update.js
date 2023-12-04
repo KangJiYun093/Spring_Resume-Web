@@ -7,13 +7,17 @@ $(function() {
 
         let text = `
             <tr>
-                <th scope="col" style="width: 35%;">
-                    <input type="date" id="admission-year" name="admissionYear" value="` + admissionYear + `" readonly>
-                    <span>-</span>
-                    <input type="date" id="graduation-year" name="graduationYear" value="` + graduationYear + `" readonly>
+                <th scope="col" style="width: 10%;">
+                    <input class="datepicker-input" type="date" id="admission-year" name="admissionYear" value="` + admissionYear + `" readonly>
+                </th>
+<!--                <th scope="col" style="width: 3%; text-align: center;" font-size: 16px;>-->
+<!--                    <span>-</span>-->
+<!--                    </th>-->
+                <th scope="col" style="width: 10%;">
+                    <input class="datepicker-input" type="date" id="graduation-year" name="graduationYear" value="` + graduationYear + `" readonly>
                 </th>
                 <th scope="col" style="width: 20%;">
-                    <input class="form-select" name="educationLevel" value="${education.educationLevel}" readonly>
+                    <input class="datepicker-input" name="educationLevel" value="${education.educationLevel}" readonly>
 <!--                        <option>학력</option>-->
 <!--                        <option value="고등학교">고등학교</option>-->
 <!--                        <option value="대학(2,3년)">대학(2,3년)</option>-->
@@ -36,12 +40,16 @@ $(function() {
         let experienceEnd = `${experience.endDate}`.split("T")[0];
         let text = `
              <tr >
-                 <th scope="col" style="width: 35%;">
-                     <input type="date" id="experience-start" name="experienceStart" value="` + experienceStart + `" readonly>
-                     <span>-</span>
-                     <input type="date" id="experience-end" name="experienceEnd" value="` + experienceEnd + `" readonly>
+                 <th scope="col" style="width: 10%;">
+                     <input class="datepicker-input" type="date" id="experience-start" name="experienceStart" value="` + experienceStart + `" readonly>
                  </th>
-                 <th scope="col" style="width: 40%;">
+<!--                <th scope="col" style="width: 3%; text-align: center;" font-size: 18px;>-->
+<!--                    <span>-</span>-->
+<!--                    </th>-->
+                <th scope="col" style="width: 10%;">
+                     <input class="datepicker-input" type="date" id="experience-end" name="experienceEnd" value="` + experienceEnd + `" readonly>
+                 </th>
+                 <th scope="col" style="width: 60%;">
                      <input placeholder="회사명을 입력해주세요" type="text" value="${experience.companyNameDepart}" name="companyName" readonly>
                  </th>
              </tr>
@@ -54,7 +62,7 @@ $(function() {
         let text = `
              <tr >
                  <th scope="col" style="width: 25%;">
-                     <input type="date" id="certification-date" name="certificationDate" value="` + certificationDate + `" readonly>
+                     <input class="datepicker-input" type="date" id="certification-date" name="certificationDate" value="` + certificationDate + `" readonly>
                  </th>
                  <th scope="col" style="width: 30%;">
                      <input placeholder="자격증명을 입력해주세요" type="text" value="${certification.certificationName}" name="certificationName" readonly>

@@ -12,14 +12,17 @@ $(() => {
                             <h2>
                                 ${post.postTitle}
                             </h2>
-                            <span style="display: flex;">
-                                <button type="button" class="card-delete">X</button>
-                            </span>
+<!--                            <span style="display: flex;">-->
+<!--                                <button type="button" class="card-delete">삭제</button>-->
+<!--                            </span>-->
                         </div>
                         <div class="card-date">
                             <span>
                                 ` + regTime + `
                                 등록
+                            </span>
+                            <span style="display: flex;">
+                                <button type="button" class="card-delete">삭제</button>
                             </span>
                         </div>
                     </div>
@@ -40,7 +43,7 @@ $(() => {
                         <span style="display: flex;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" 
                             viewBox="0 0 20 20">
-                            <path fill="#00DD6D" fill-rule="evenodd" 
+                            <path fill="#457B9D" fill-rule="evenodd" 
                             d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z" 
                             clip-rule="evenodd">
                             </path>

@@ -6,11 +6,39 @@ a {
     cursor: pointer;
 }
 
+body{
+    line-height: 1;
+    color: rgb(0, 0, 0);
+    text-size-adjust: none;
+    margin : 0px;
+}
+
+*{
+    font-family: 'GmarketSansMedium';
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-list-view{
+    background-color: rgb(71, 116, 144);
+    font-size: 16px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100vw;
+    height: 100vh;
+
+}
+
 .main-list-view-box{
     width: 100%;
     height: 100%;
     padding: 40px 0px 140px;
-    background-color: rgb(245, 245, 248);
+    background-color: rgb(71, 116, 144);
 }
 
 .view-box{
@@ -21,6 +49,19 @@ a {
     padding: 32px 40px 40px;
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
+}
+
+.view-box1 {
+    position: relative;
+    width: 1000px;
+    height: 10px;
+    margin-left: 300px;
+    padding: 32px 40px 40px;
+    background-color: rgb(71, 116, 144);
+    border-radius: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: 800;
 }
 
 ul{
@@ -114,6 +155,7 @@ a{
     justify-content: space-between;
     padding-top: 16px;
     border-top: 1px solid rgb(228, 228, 228);
+    font-size: 13px;
 }
 
 .list-content-card-add{
@@ -170,4 +212,8 @@ p {
     font-size: 13px;
     line-height: 20px;
     color: rgb(68, 68, 68);
+}
+
+.card-delete{
+    color: #dc3545;
 }

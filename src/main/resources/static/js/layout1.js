@@ -3,11 +3,15 @@ $(() => {
     $(".flrCAb").on("click", () => {
        let text = `
             <tr>
-                <th scope="col" style="width: 35%;">
-                    <input type="date" id="admission-year" name="admissionYear">
-                    <span>-</span>
-                    <input type="date" id="graduation-year" name="graduationYear">
+                <th scope="col" style="width: 10%;">
+                    <input class="datepicker-input" type="date" id="admission-year" name="admissionYear">
                 </th>
+                <th scope="col" style="width: 3%; text-align: center; font-size: 16px;">
+                    <span>-</span>
+                    </th>
+                <th scope="col" style="width: 10%;">
+                    <input class="datepicker-input" type="date" id="graduation-year" name="graduationYear">
+                 </th>
                 <th scope="col" style="width: 20%;">
                 <select class="form-select" name="educationLevel">
                     <option>학력</option>
@@ -37,10 +41,14 @@ $(() => {
     $(".flrCAb-1").on("click", () => {
         let text = `
              <tr >
-                 <th scope="col" style="width: 35%;">
-                     <input type="date" id="experience-start" name="experienceStart">
-                     <span>-</span>
-                     <input type="date" id="experience-end" name="experienceEnd">
+                 <th scope="col" style="width: 10%;">
+                     <input class="datepicker-input" class="datepicker-input" type="date" id="experience-start" name="experienceStart">
+                 </th>
+                <th scope="col" style="width: 3%; text-align: center;" font-size: 18px;>
+                    <span>-</span>
+                    </th>
+                <th scope="col" style="width: 10%;">
+                     <input class="datepicker-input" class="datepicker-input" type="date" id="experience-end" name="experienceEnd">
                  </th>
                  <th scope="col" style="width: 40%;">
                      <input placeholder="회사명을 입력해주세요" type="text" value="" name="companyName">
@@ -61,7 +69,7 @@ $(() => {
         let text = `
              <tr >
                  <th scope="col" style="width: 25%;">
-                     <input type="date" id="certification-date" name="certificationDate">
+                     <input class="datepicker-input" type="date" id="certification-date" name="certificationDate">
                  </th>
                  <th scope="col" style="width: 30%;">
                      <input placeholder="자격증명을 입력해주세요" type="text" value="" name="certificationName">
