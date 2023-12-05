@@ -11,8 +11,8 @@
 <body>
     <main class="wrap">
         <div>
-            <div class="container">
-                <div class="c_container">
+            <div id="container" class="container">
+                <div class="c_container" id="pdfDiv">
                     <form novalidate>
                         <div class="view_container">
                             <div class="write_wrap_box">
@@ -245,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div class="save_container">
-                                    <button type="button" class="uTmNJ1 ksTkXH1" id="save-button">PDF변환하기</button>
+                                    <button type="button" onclick="capture()" class="uTmNJ1 ksTkXH1" id="save-button">PDF변환하기</button>
                                 </div>
                             </div>
                         </div>
@@ -257,8 +257,73 @@
 </body>
 <!-- jQuery 라이브러리 -->
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<!--<script src="/js/jquery.min.js"></script>-->
+<script src="/js/jspdf.min.js"></script>
+<script src="/js/html2canvas.js"></script>
 <script th:inline="javascript">
     let post = [[${post}]];
 </script>
 <script src="/js/post-update.js"></script>
+<script>
+
+
+    function capture() {
+
+        // html2canvas 실행
+        // 캡처 버튼 숨기기
+        $('#save-button').css({display: "none"});
+
+        // html2canvas 실행
+        html2canvas(document.body, {
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: document.documentElement.offsetWidth,
+            windowHeight: document.documentElement.offsetHeight
+        }).then(canvas => {
+            // 생성된 캔버스를 body에 추가
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF("p",'mm','a4');
+            pdf.addImage(imgData,"PNG",0,0, pdf.internal.pageSize.width,pdf.internal.pageSize.height)
+
+            pdf.save("test.pdf")
+
+
+            // 캡처 버튼 다시 표시
+            $('#save-button').css({display: "block"});
+        });
+    }
+</script>
+<!--<script>-->
+
+<!--    $('#save-button').click(function() {-->
+<!--        html2canvas($('#pdfDiv')[0]).then(function(canvas) {-->
+<!--            // 캔버스를 이미지로 변환-->
+<!--            let imgData = canvas.toDataURL('image/png');-->
+
+<!--            let margin = 10; // 출력 페이지 여백설정-->
+<!--            let imgWidth = 210 - (10 * 2); // 이미지 가로 길이(mm) A4 기준-->
+<!--            let pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준-->
+<!--            let imgHeight = canvas.height * imgWidth / canvas.width;-->
+<!--            let heightLeft = imgHeight;-->
+
+<!--            let doc = new jsPDF('p', 'mm');-->
+<!--            let position = margin;-->
+
+<!--            // 첫 페이지 출력-->
+<!--            doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);-->
+<!--            heightLeft -= pageHeight;-->
+
+<!--            // 한 페이지 이상일 경우 루프 돌면서 출력-->
+<!--            while (heightLeft >= 20) {-->
+<!--                position = heightLeft - imgHeight;-->
+<!--                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);-->
+<!--                doc.addPage();-->
+<!--                heightLeft -= pageHeight;-->
+<!--            }-->
+
+<!--            // 파일 저장-->
+<!--            doc.save('sample.pdf');-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 </html>

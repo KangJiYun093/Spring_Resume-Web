@@ -87,4 +87,54 @@ $(function() {
         `;
         $(".introduce-list").append(text);
     });
+
+    // $('#save-button').click(function() {
+    //     html2canvas($('#pdfDiv')[0]).then(function(canvas) {
+    //         // 캔버스를 이미지로 변환
+    //         let imgData = canvas.toDataURL('image/png');
+    //
+    //         let margin = 10; // 출력 페이지 여백설정
+    //         let imgWidth = 210 - (10 * 2); // 이미지 가로 길이(mm) A4 기준
+    //         let pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+    //         let imgHeight = canvas.height * imgWidth / canvas.width;
+    //         let heightLeft = imgHeight;
+    //
+    //         let doc = new jsPDF('p', 'mm','a4');
+    //         let position = margin;
+    //
+    //         // 첫 페이지 출력
+    //         doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+    //         heightLeft -= pageHeight;
+    //
+    //         // 한 페이지 이상일 경우 루프 돌면서 출력
+    //         // 추가 페이지 출력
+    //         while (heightLeft > 0) {
+    //             position = pageHeight - (imgHeight - heightLeft);
+    //             doc.addPage();
+    //             doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+    //             heightLeft -= pageHeight;
+    //         }
+    //
+    //         // 파일 저장
+    //         doc.save('sample.pdf');
+    //     });
+    // });
+
+
+    function capture() {
+        $('#save-button').css({display: "none"});
+        // HTML2Canvas 실행
+        html2canvas(document.body).then(canvas => {
+
+            // Canvas를 이미지로 변환하고 PDF로 저장
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            pdf.addImage(imgData, 'PNG', 0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height);
+
+            // PDF를 다운로드
+            pdf.save('sample.pdf')
+        });
+    }
+
+
 });
